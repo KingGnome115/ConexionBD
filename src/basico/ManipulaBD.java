@@ -17,30 +17,37 @@ public class ManipulaBD
     {
         try
         {
-            return con.Conecta("Localhost:3306", "Ejemplo", "root","",2);
+            return con.Conecta("Localhost:3306", "Ejemplo", "root", "", 2);
         } catch (Exception e)
         {
             System.out.println("No se pudo conectar a la bd");
             return null;
         }
     }
-    
+
     public static void desconecta(Connection conn)
     {
         con.desconectar(conn);
     }
-    
-    public static ArrayList<Objeto> cargarO(ArrayList<Objeto> reg)
+
+    public static ArrayList<Objeto> cargarO(ArrayList<Object> reg)
     {
         try
         {
             ArrayList<Objeto> v = new ArrayList<>();
-            for (int i = 0; i < reg.size(); i+=3)
+            for (int i = 0; i < reg.size(); i += 3)
             {
-                //
+                String idS = (String) reg.get(i);
+                if (idS != "" && idS != " ")
+                {
+                    int id = Integer.parseInt(idS.trim());
+                    String item2 = ((String) reg.get(i + 1)).trim();
+                    String item3S = ((String) reg.get(i + 2)).trim();
+                    float item3 = Float.valueOf(item3S);
+                    Objeto obj = new Objeto(id, item2, item3);
+                    v.add(obj);
+                }
             }
-            Objeto obj = new Objeto(0, "Hola", 0);
-            v.add(obj);
             return v;
         } catch (Exception e)
         {

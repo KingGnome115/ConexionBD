@@ -6,7 +6,8 @@ package basico;
  */
 public class Objeto
 {
-    private int item1;
+
+    private int id;
     private String item2;
     private float item3;
 
@@ -14,27 +15,27 @@ public class Objeto
     {
     }
 
-    public Objeto(int item1, String item2, float item3)
+    public Objeto(int id, String item2, float item3)
     {
-        this.item1 = item1;
+        this.id = id;
         this.item2 = item2;
         this.item3 = item3;
     }
 
     /**
-     * @return the item1
+     * @return the id
      */
-    public int getItem1()
+    public int getId()
     {
-        return item1;
+        return id;
     }
 
     /**
-     * @param item1 the item1 to set
+     * @param id the id to set
      */
-    public void setItem1(int item1)
+    public void setId(int id)
     {
-        this.item1 = item1;
+        this.id = id;
     }
 
     /**
@@ -68,8 +69,5 @@ public class Objeto
     {
         this.item3 = item3;
     }
-    
-    
-    
-    
+
 }
