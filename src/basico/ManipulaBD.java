@@ -35,6 +35,13 @@ public class ManipulaBD
         try
         {
             ArrayList<Objeto> v = new ArrayList<>();
+            for (int i = 0; i < reg.size(); i+=3)
+            {
+                //
+            }
+            Objeto obj = new Objeto(0, "Hola", 0);
+            v.add(obj);
+            return v;
         } catch (Exception e)
         {
             System.out.println("Error al crear objetos");
