@@ -42,7 +42,12 @@ public class ABCM
             System.out.println("Dato insertado");
         }
         //Bajas
-        
+        Connection con2 = ManipulaBD.conecta();
+        if (con2 != null)
+        {
+            Querys sql = new Querys();
+            sql.Delete(con2, "EjemploTabla", "item2", "'" + item22 + "'");
+        }
         //Consultas
         
         //Modificaciones
