@@ -70,4 +70,9 @@ public class Objeto
         this.item3 = item3;
     }
 
+    public String desp()
+    {
+        return "id= " + id + " Item2= " + item2 + " Item3= " + item3;
+    }
+
 }
