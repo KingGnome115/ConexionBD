@@ -32,12 +32,14 @@ public class ManipulaBD
 
     public static ArrayList<Objeto> cargarO(ArrayList<Object> reg)
     {
+        ArrayList<Objeto> v = new ArrayList<>();
         try
         {
-            ArrayList<Objeto> v = new ArrayList<>();
             for (int i = 0; i < reg.size(); i += 3)
             {
-                String idS = (String) reg.get(i);
+                String idS = "";
+                idS = (String) reg.get(i);
+                idS = idS.trim();
                 if (idS != "" && idS != " ")
                 {
                     int id = Integer.parseInt(idS.trim());
@@ -52,7 +54,13 @@ public class ManipulaBD
         } catch (Exception e)
         {
             System.out.println("Error al crear objetos");
-            return null;
+            if (v != null)
+            {
+                return v;
+            } else
+            {
+                return null;
+            }
         }
     }
 
